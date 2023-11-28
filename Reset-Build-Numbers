@@ -1,10 +1,10 @@
 //Find the Pipeline where you want to reset the build number
-pipeline-job = Jenkins.instance.getItemByFullName("path-to-your-pipeline/pipeline-name")
+pipelineJob = Jenkins.instance.getItemByFullName("path-to-your-pipeline/pipeline-name")
 
-//Loop over the builds an delete the previous buils
-pipeline-job.builds.each() { 
+//Loop over the builds and delete the previous build
+pipelineJob.builds.each() { 
   build -> build.delete()
 }
 
 //Set the Number to 1 or any other value
-pipeline.job.updateNextBuildNumber(1)
+pipelineJob.updateNextBuildNumber(1)
