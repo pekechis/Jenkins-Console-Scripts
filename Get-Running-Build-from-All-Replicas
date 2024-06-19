@@ -1,0 +1,9 @@
+import com.cloudbees.jenkins.plugins.replication.hazelcast.Hazelcast;
+def me = Hazelcast.get().cluster.localMember;
+println("Running on $me.address started at ${Hazelcast.startTime(me)}");
+jenkins.model.Jenkins.instanceOrNull.getComputers().each{ computer ->
+  computer.allExecutors.findAll { exec -> exec.isBusy() && exec.currentExecutable
+  println exec.currentExecutable
+  }
+}
+return null
